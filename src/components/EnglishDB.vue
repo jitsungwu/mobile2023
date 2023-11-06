@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive, watch } from "vue";
+import { reactive, watch, inject } from "vue";
 import { collection, getDocs, getFirestore, query, where } from "firebase/firestore"; 
 import app from "@/components/settings/FirebaseConfig.vue"
 
@@ -9,6 +9,10 @@ const state = reactive({choice:1 , answer:[''],message: [''],exams:[{question:""
 const db = getFirestore(app);
 const examCollection = collection(db, "English");
 generateQuestions();
+
+// const account:{name:string, email:string} = inject('account',{name:'未登入', email:''})
+const account = inject('account',{name:'未登入', email:''})
+account.name="Hahaha";
 // const queryExam = query(examCollection, where("unit", "==", state.choice));
 // const querySnapshot = await getDocs(queryExam);
 // state.exams=[];
@@ -48,6 +52,7 @@ function checkAnswers() {
 </script>
 <template>
 <v-container>
+  {{ account.name }}
   <v-select label="請選擇" v-model="state.choice" :items="units" >
   </v-select>
   <v-card v-for="(exam, index) in state.exams" :key="index">

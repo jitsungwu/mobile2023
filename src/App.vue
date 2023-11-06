@@ -1,11 +1,15 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { provide, reactive, ref } from 'vue'
 let drawer = ref(false)
 let items = [
   { title: '英文', to: '/english' },
   { title: '化學', to: '/chemistry' },
   { title: '化學單選', to: '/chemistry-radio' }
 ]
+const account = reactive({
+  name: '吳濟聰',
+  email: 'benwu@im.fju.edu.tw'})
+provide(/* key */ 'account', /* value */ account)
 </script>
 
 <template>
@@ -13,7 +17,7 @@ let items = [
     <v-app-bar>
       <v-icon icon="plus"></v-icon>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-      <v-app-bar-title>Application bar</v-app-bar-title>
+      <v-app-bar-title>Application bar {{ account.name }}</v-app-bar-title>
     </v-app-bar>
     <v-navigation-drawer floating permanent v-model="drawer">
       <v-list>
