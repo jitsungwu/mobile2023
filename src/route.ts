@@ -15,20 +15,17 @@ const router = createRouter({
     {
       path: '/chemistry',
       name: 'chemistry',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      // component: ChemistryInput
       component: () => import('./components/ChemistryInput.vue')
     },
     {
       path: '/chemistry-radio',
       name: 'chemistry radio',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      // component: ChemistryInput
       component: () => import('./components/ChemistryRadio.vue')
+    },
+    {
+      path: '/account',
+      name: 'account',
+      component: () => import('./components/account/Account.vue')
     }
   ]
 })

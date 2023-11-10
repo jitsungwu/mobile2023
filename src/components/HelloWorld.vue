@@ -2,8 +2,8 @@
 defineProps<{
   msg: string
 }>()
-function clicked(){
-  alert("clicked")
+function clicked() {
+  alert('clicked')
 }
 </script>
 

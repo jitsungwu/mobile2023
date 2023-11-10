@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { reactive } from "vue";
-const props = defineProps(["init", "count"]);
-const emit = defineEmits(["clicked"]);
-const state = reactive({ count: props.init });
+import { reactive } from 'vue'
+const props = defineProps(['init', 'count'])
+const emit = defineEmits(['clicked'])
+const state = reactive({ count: props.init })
 function increment() {
-  state.count++;
-  emit("clicked");
-  alert(state.count);
+  state.count++
+  emit('clicked')
+  alert(state.count)
 }
 </script>
 <template>

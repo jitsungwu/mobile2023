@@ -1,21 +1,21 @@
 <script setup lang="ts">
-import { reactive } from "vue";
-let answer = "";
-const state = reactive({ message: "", currentQuestion: 0 });
+import { reactive } from 'vue'
+let answer = ''
+const state = reactive({ message: '', currentQuestion: 0 })
 let exams = [
-  { question: "氫的化學符號", answer: "H" },
-  { question: "氧的化學符號", answer: "O" },
-  { question: "氦的化學符號", answer: "He" },
-];
+  { question: '氫的化學符號', answer: 'H' },
+  { question: '氧的化學符號', answer: 'O' },
+  { question: '氦的化學符號', answer: 'He' }
+]
 function generateQuestion() {
   if (exams[state.currentQuestion].answer === answer) {
-    state.message = "答案正確";
-    answer = "";
+    state.message = '答案正確'
+    answer = ''
     if (state.currentQuestion + 1 < exams.length) {
-      state.currentQuestion++;
+      state.currentQuestion++
     }
   } else {
-    state.message = "答案錯誤";
+    state.message = '答案錯誤'
   }
 }
 </script>
