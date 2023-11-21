@@ -6,6 +6,8 @@ import { doc, getDoc, getFirestore } from 'firebase/firestore';
 
 let drawer = ref(false)
 let items = [
+{ title: '登入', to: '/account' },
+{ title: '圖片', to: '/a' },
   { title: '英文', to: '/english' },
   { title: '化學', to: '/chemistry' },
   { title: '化學單選', to: '/chemistry-radio' }

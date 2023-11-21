@@ -25,7 +25,10 @@ watch(login, () => {
     account.name = login.name
     state.action = 'signOut'
   }
-})
+  },{ 
+    immediate: true
+
+  })
 
 
 async function handleClick(status: 'signIn' | 'signUp'| 'signOut') {
@@ -33,10 +36,11 @@ async function handleClick(status: 'signIn' | 'signUp'| 'signOut') {
     state.status = 'info'
     if (status==='signUp'){
       state.message = '註冊中...'
+      const name = account.name
       const res = await createUserWithEmailAndPassword(auth, account.email, account.password)
       const uid = res.user.uid;
       await setDoc(doc(db, "user", uid), {
-        name: account.name
+        name: name
       });
       if (res.user) {
         state.status = 'success'
