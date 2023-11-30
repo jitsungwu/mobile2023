@@ -15,7 +15,8 @@ let items = [
 
 const account = reactive({
   name: '未登入',
-  email: ''
+  email: '',
+  id: ''
 })
 const auth = getAuth(app)
 const db = getFirestore(app)
@@ -23,6 +24,7 @@ const unsub = onAuthStateChanged(auth, async (user)=>{
   if (user) {
     account.name='已登入'
     account.email = user.email?user.email:''
+    account.id = user.uid
     console.log(user);
     const userDoc = await getDoc(doc(db, "user", user.uid));
 
