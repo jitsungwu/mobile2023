@@ -53,7 +53,7 @@ provide(/* key */ 'account', /* value */ readonly(account))
     <v-app-bar>
       <v-icon icon="plus"></v-icon>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-      <v-app-bar-title>Application bar {{ account.email }}</v-app-bar-title>
+      <v-app-bar-title>產品管理{{ account.email }}</v-app-bar-title>
     </v-app-bar>
     <v-navigation-drawer floating permanent v-model="drawer">
       <v-list>
