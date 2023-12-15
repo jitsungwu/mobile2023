@@ -40,7 +40,6 @@ watch(login, () => {
   }
   },{ 
     immediate: true
-
   })
 </script>
 <template>
