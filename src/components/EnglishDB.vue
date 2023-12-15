@@ -50,6 +50,7 @@ async function checkAnswers() {
   }
   await addDoc(collection(db,"user/"+account.id+"/record"),
     {
+      subject: '英文',
       unit: state.choice,
       correctCount: state.correctCount,
       incorrectCount: state.incorrectCount,

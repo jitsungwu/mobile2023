@@ -48,6 +48,6 @@ watch(login, () => {
     <v-text-field v-model=account.name label="姓名"></v-text-field>
     {{ state.message  }}
     <v-btn color="primary" @click="handleClick()">更新</v-btn>
-    <v-btn color="secondary" >回首頁</v-btn>    
+    <v-btn color="secondary" @click="$router.push('/')" >回首頁</v-btn>    
   </v-container>
 </template>
