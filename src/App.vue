@@ -18,7 +18,7 @@ const account = reactive({
   email: '',
   id: ''
 })
-
+//test
 const auth = getAuth(app)
 const db = getFirestore(app)
 const unsub = onAuthStateChanged(auth, async (user)=>{
